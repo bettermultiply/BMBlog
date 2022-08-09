@@ -1,3 +1,1 @@
-# BMBlog
-BetterMultiply‘s Blog
-It's such a sad thing that I have forget how to use git
+This is a starter template for [Learn Next.js](https://nextjs.org/learn).
