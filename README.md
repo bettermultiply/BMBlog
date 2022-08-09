@@ -1,0 +1,2 @@
+# BMBlog
+BetterMultiply‘s Blog
