@@ -1,4 +1,15 @@
-a {
+  .M {
+    width: 90%;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+  }
+
+
+  a {
     color: inherit;
     text-decoration: none;
   }
