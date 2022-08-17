@@ -13,6 +13,7 @@ export async function getStaticProps() {
   };
 }
 
+
 export default function Home({ allPostsData }) {
   return (
     <main>
@@ -78,9 +79,10 @@ export default function Home({ allPostsData }) {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
+          <Direc allPostsData={allPostsData}></Direc>
         </div>
       </main>
-      <Direc allPostsData={allPostsData}></Direc>
+      
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

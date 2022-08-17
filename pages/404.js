@@ -1,0 +1,3 @@
+export default function Custom404() {
+    return <h1>404 - The Page doesn't exit</h1>
+}
