@@ -1,44 +1,42 @@
-import {getAllPostIds, getPostData} from '../../lib/posts';
-import Head from 'next/dist/shared/lib/head';
-import Date from '../../components/date';
-
-export default function Post({postData}) {
-    return ( 
-        <div> 
-            <Head>
-                <title>{postData.title}</title>
-            </Head>     
-        <div>
-            {postData.title}
-            <br />
-            {postData.id}
-            <br />
-            <Date dateString={postData.date} />
-            <br />
-            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        </div>
-        <a href='/'>
-                <h1>Back Home</h1>
-            </a>
-        </div>
-    );
-}
+import { getAllPostIds, getPostData } from "../../lib/posts";
+import Head from "next/dist/shared/lib/head";
+import Link from "next/link"
+import Border from "../../components/border";
+import Date from "../../components/date";
 
 export async function getStaticPaths() {
     const paths = getAllPostIds();
     return {
         paths,
-        fallback: false,
-        // false时，任何未放回的路径都将导致404
-        // true时
-    };
+        fallback: false
+    }
 }
 
-export async function getStaticProps({params}) { //params由url传入
+export async function getStaticProps({params}) {
     const postData = await getPostData(params.id);
     return {
         props: {
             postData,
-        },
-    };
+        }
+    }
+}
+
+export default function Post({postData}) {
+    return (
+        <main>
+            <Head>
+                <title>{postData.title}</title>
+                <meta name="description" />
+                <link rel="icon" href="../../public/favicon" />
+            </Head>
+            <body>
+                <Border />
+                <h1>{postData.title}</h1>
+                    <font color="grey">
+                        <Date dateString={postData.date} />
+                    </font>
+                <div dangerouslySetInnerHTML={{ __html: postData.contentHtml}} />
+            </body>
+        </main>
+    );
 }

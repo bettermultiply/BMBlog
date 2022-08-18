@@ -1,12 +1,11 @@
-import './styles/all.css';
-import Head from 'next/head';
-import Link from 'next/link';
-import { Component } from 'react';
+import '../styles/globals.css'
 
-export default function MyApp({Component, pageProps}) {
-    return (
-    <div className='M'>
-        <Component {...pageProps} />
-    </div>
-    )
+function MyApp({ Component, pageProps }) {
+  return (
+  <div className='Whole'>
+    <Component {...pageProps} />
+  </div>
+  )
 }
+
+export default MyApp
