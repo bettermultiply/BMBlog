@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { getSortedPostsData } from '../lib/posts';
-import { Direc } from '../components/Directory';
+import { Direc } from '../components/directory';
 
 
 //gteStaticProps提供静态渲染服务
@@ -30,7 +30,7 @@ export default function Home({ allPostsData }) {
       <main className={styles.main}>
         <header className={styles.Header_0}>
           <div className={styles.Header_left}>
-            <a href="#">
+            <a href="">
               <span className={styles.Logo}>Better~Multiply</span>
             </a>
           </div>
@@ -47,35 +47,12 @@ export default function Home({ allPostsData }) {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          Connect with me by mailing &rarr;{' '}
+          <code className={styles.code}>bettermultiply@gmail.com</code>
         </p>
 
         <div className={styles.grid}>
-          <a href="#" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="#" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="#"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="#"
-            className={styles.card}
-          >
-            <Direc allPostsData={allPostsData}/>
-          </a>
+          <Direc allPostsData={allPostsData}/>
         </div>
       </main>
       

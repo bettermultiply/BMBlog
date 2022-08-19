@@ -3,6 +3,7 @@ import Head from "next/dist/shared/lib/head";
 import Link from "next/link"
 import Border from "../../components/border";
 import Date from "../../components/date";
+import styles from "../../styles/article.module.css"
 
 export async function getStaticPaths() {
     const paths = getAllPostIds();
@@ -23,20 +24,24 @@ export async function getStaticProps({params}) {
 
 export default function Post({postData}) {
     return (
-        <main>
+        <html>
             <Head>
                 <title>{postData.title}</title>
                 <meta name="description" />
                 <link rel="icon" href="../../public/favicon" />
             </Head>
-            <body>
+            
+            <body className={styles.Body}>
                 <Border />
-                <h1>{postData.title}</h1>
-                    <font color="grey">
+                <main className={styles.Main}>
+                <h1 className={styles.Title}>{postData.title}</h1>
+                    <font className={styles.Date}>
                         <Date dateString={postData.date} />
+                        <div className={styles.Space}> </div>
                     </font>
-                <div dangerouslySetInnerHTML={{ __html: postData.contentHtml}} />
+                <div dangerouslySetInnerHTML={{ __html: postData.contentHtml}} className={styles.Content}></div>
+                </main>
             </body>
-        </main>
+        </html>
     );
 }

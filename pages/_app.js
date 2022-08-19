@@ -2,9 +2,9 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-  <div className='Whole'>
+  <html className='Whole'>
     <Component {...pageProps} />
-  </div>
+  </html>
   )
 }
 
