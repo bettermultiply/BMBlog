@@ -50,8 +50,7 @@ export default function Home({ allPostsData }) {
           Connect with me by mailing &rarr;{' '}
           <code className={styles.code}>bettermultiply@gmail.com</code>
         </p>
-
-        <div className={styles.grid}>
+        <div className={styles.Content}>
           <Direc allPostsData={allPostsData}/>
         </div>
       </main>

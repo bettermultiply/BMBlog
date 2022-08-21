@@ -1,0 +1,28 @@
+.List {
+    padding: 1px;
+    max-width: 200px;
+    /*
+  
+    */
+  }
+
+.Head {
+    padding-left: 15%;
+}
+
+.UList {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+    right: 10%;
+
+}
+
+.Items {
+    margin: 0;
+    padding: 0;
+    line-height: 1.25em;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+}
