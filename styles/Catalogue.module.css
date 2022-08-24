@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: start;
     position: relative;
-    right: 10%;
+    right: 20%;
 
 }
 
@@ -25,4 +25,19 @@
     line-height: 1.25em;
     font-family: "Times New Roman", Times, serif;
     font-size: 14px;
+}
+
+.Li {
+    color: #58a790;
+}
+
+.Li a:hover,
+.Li a:active,
+.Li a:focus {
+    color: #1367a4;
+    text-decoration: underline dashed;
+}
+
+.Link {
+    color: #000;
 }

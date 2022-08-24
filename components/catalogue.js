@@ -5,8 +5,10 @@ export default function Catalogue({allIds}) {
         <div className={styles.List}>
             <h4 className={styles.Head}>Catalogue</h4>
             <ul className={styles.UList}>
-                {allIds.map(({id,c,s,i}) => (
-                <li key={id}>{id}</li>
+                {allIds.map(({id}) => (
+                <li className={styles.Li} key={id}>
+                    <a href={`/post/${id}`} className={styles.Link}>{id}</a>
+                </li>
                 ))}
             </ul>
         </div>
