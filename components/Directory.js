@@ -2,7 +2,8 @@ import Date from "./date";
 import Catalogue from "./catalogue";
 import styles from '../styles/Directory.module.css'
 
-export function Direc({ allPostsData, allIds }) {
+export function Direc({props}) {
+    const {allPostsData, allDir} = props;
     return (
         <div className={styles.Catalogue}>
             <div className={styles.grid}>
@@ -16,7 +17,7 @@ export function Direc({ allPostsData, allIds }) {
             </a>
             ))}
             </div>
-            <Catalogue allIds={allPostsData}/>
+            <Catalogue allDir={allDir}/>
         </div>
     );
 }

@@ -1,20 +1,21 @@
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getAllPostIds, getPostData} from "../../../lib/posts";
 import Head from "next/dist/shared/lib/head";
 import Link from "next/link"
-import Border from "../../components/border";
-import Date from "../../components/date";
-import styles from "../../styles/article.module.css"
+import Border from "../../../components/border";
+import Date from "../../../components/date";
+import styles from "../../../styles/article.module.css"
+import path from "path"
 
 export async function getStaticPaths() {
     const paths = getAllPostIds();
     return {
         paths,
-        fallback: false
+        fallback: false,
     }
 }
 
 export async function getStaticProps({params}) {
-    const postData = await getPostData(params.id);
+    const postData = await getPostData(params.pid, params.id);
     return {
         props: {
             postData,

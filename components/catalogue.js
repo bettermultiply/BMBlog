@@ -1,16 +1,14 @@
 import styles from "../styles/Catalogue.module.css"
 
-export default function Catalogue({allIds}) {
+export default function Catalogue({allDir}) {
     return (
         <div className={styles.List}>
             <h4 className={styles.Head}>Catalogue</h4>
-            <ul className={styles.UList}>
-                {allIds.map(({id}) => (
-                <li className={styles.Li} key={id}>
-                    <a href={`/post/${id}`} className={styles.Link}>{id}</a>
+            <div>{allDir.map(({dir}) => (
+                <li className={styles.Li} key={dir}>
+                    <a href={`/post/${dir}`} >{dir}</a>
                 </li>
-                ))}
-            </ul>
+                ))}</div>
         </div>
     );
 }
