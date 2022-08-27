@@ -4,7 +4,6 @@ import Link from "next/link"
 import Border from "../../../components/border";
 import Date from "../../../components/date";
 import styles from "../../../styles/article.module.css"
-import path from "path"
 
 export async function getStaticPaths() {
     const paths = getAllPostIds();

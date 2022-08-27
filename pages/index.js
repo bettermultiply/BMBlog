@@ -1,15 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { getSortedPostsData, getAllPostDir } from '../lib/posts';
+import { getSortedPostsData, getPostDir } from '../lib/posts';
 import { Direc } from '../components/directory';
-
+import Catalogue from '../components/catalogue';
 //gteStaticProps提供静态渲染服务
 //若要使用服务器端渲染应该构建函数getServerSideProps
 //仅当需要预渲染必须在请求时获取其数据的页面时才应使用
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
-  const allDir = getAllPostDir();
+  const allDir = getPostDir();
   return { 
     props: {
       allPostsData,
@@ -43,7 +43,7 @@ export default function Home(props) {
             <span><a className={styles.sp} href='#'>About_BM</a></span>
           </div>
         </header>
-
+    
         <h1 className={styles.title}>
           <div>Welcome</div>
           <div><a href="#">{"It's BM' s Blog!"}</a></div>
@@ -52,8 +52,9 @@ export default function Home(props) {
           Connect with me by mailing &rarr;{' '}
           <code className={styles.code}>bettermultiply@gmail.com</code>
         </p>
-        <div className={styles.Content}>
-          <Direc props={props}/>
+        <div className={styles.Catalogue}>
+          <Direc allPostsData={allPostsData}/>
+          <Catalogue allDir={allDir}/>
         </div>
       </html>
       

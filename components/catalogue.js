@@ -4,11 +4,12 @@ export default function Catalogue({allDir}) {
     return (
         <div className={styles.List}>
             <h4 className={styles.Head}>Catalogue</h4>
-            <div>{allDir.map(({dir}) => (
-                <li className={styles.Li} key={dir}>
-                    <a href={`/post/${dir}`} >{dir}</a>
+            <div>{allDir.map(({pid}) =>         
+                (<li className={styles.Li} key={pid}>
+                    <a href={`/posts/${pid}`} >{pid}</a>
                 </li>
-                ))}</div>
+                ))}
+            </div>
         </div>
     );
 }

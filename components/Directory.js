@@ -1,14 +1,12 @@
 import Date from "./date";
-import Catalogue from "./catalogue";
 import styles from '../styles/Directory.module.css'
 
-export function Direc({props}) {
-    const {allPostsData, allDir} = props;
+export function Direc({allPostsData}) {
     return (
-        <div className={styles.Catalogue}>
+        <div>
             <div className={styles.grid}>
-            {allPostsData.map(({ id, content, date, title }) => (
-            <a href={`posts/${id}`} className={styles.card}  key={id}>
+            {allPostsData.map(({ id, pid, content, date, title }) => (
+            <a href={`posts/${pid}/${id}`} className={styles.card}  key={id}>
                 <h2>{title} &rarr;</h2>
                 <p>{content}</p>
                 <font color="grey">
@@ -17,7 +15,23 @@ export function Direc({props}) {
             </a>
             ))}
             </div>
-            <Catalogue allDir={allDir}/>
         </div>
+    );
+}
+
+export function PidDirec({allPostsData}) {
+    return (
+            <div className={styles.grid}>
+            {allPostsData.map(({ id, pid, content, date, title }) => 
+                (
+            <a href={`${pid}/${id}`} className={styles.card}  key={id}>
+                <h2>{title} &rarr;</h2>
+                <p>{content}</p>
+                <font color="grey">
+                    <Date dateString={date} />
+                </font>
+            </a>
+            ))}
+            </div>
     );
 }

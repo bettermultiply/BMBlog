@@ -1,0 +1,8 @@
+.Catalogue {
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;
+    margin: 1rem;
+    background-color: #f5f4f44e;
+  }
+  

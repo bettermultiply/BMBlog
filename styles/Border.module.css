@@ -46,7 +46,7 @@
     font-size: 15px;
     flex: 1;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     width: 40%;
   }
   

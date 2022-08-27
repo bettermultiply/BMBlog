@@ -109,7 +109,7 @@
   font-size: 15px;
   flex: 1;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   width: 40%;
 }
 
@@ -183,9 +183,12 @@
   margin-left: 0.5rem;
 }
 
-.Content {
+.Catalogue {
   display: flex;
   flex-direction: row;
+  max-width: 800px;
+  margin: 1rem;
+  background-color: #f5f4f44e;
 }
 
 @media (max-width: 600px) {
