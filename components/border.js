@@ -5,7 +5,7 @@ export default function Border() {
     return (
         <header className={styles.Header_0}>
             <div className={styles.Header_left}>
-            <Link href="/">
+                <Link href="/">
                 <a>
                     <span className={styles.Logo}>Better</span>
                     <span className={styles.Logo}>~</span>
