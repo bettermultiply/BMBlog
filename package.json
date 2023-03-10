@@ -7,13 +7,17 @@
   },
   "dependencies": {
     "date-fns": "^2.29.3",
+    "dgram": "^1.0.1",
+    "dns": "^0.2.2",
     "mdx-bundler": "^9.2.1",
     "mongodb": "^4.8.1",
+    "net": "^1.0.2",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remark": "^14.0.2",
-    "remark-html": "^15.0.2"
+    "remark-html": "^15.0.2",
+    "tls": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "18.7.5",

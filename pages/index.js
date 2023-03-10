@@ -4,23 +4,37 @@ import styles from '../styles/Home.module.css'
 import { getSortedPostsData, getPostDir } from '../lib/posts';
 import { Direc } from '../components/directory';
 import Catalogue from '../components/catalogue';
+import clientPromise from "../lib/mongodb"
+
 //gteStaticProps提供静态渲染服务
 //若要使用服务器端渲染应该构建函数getServerSideProps
 //仅当需要预渲染必须在请求时获取其数据的页面时才应使用
 export async function getStaticProps() {
+  const client = await clientPromise;
+  const db = client.db("article");
+
+  const movies = await db
+      .collection("article")
+      .find({})
+      .toArray();
+
+  const visit = JSON.parse(JSON.stringify(movies[0]));
+  db.collection("article").updateOne({"visitor":visit.visitor}, {$set:{"visitor":visit.visitor + 1}});
+  
   const allPostsData = getSortedPostsData();
   const allDir = getPostDir();
   return { 
     props: {
       allPostsData,
       allDir,
+      visit,
     },
   };
 }
 
 //
 export default function Home(props) {
-  const {allPostsData, allDir} = props;
+  const {allPostsData, allDir, visit} = props;
   return (
     <main className={styles.container}>
       <Head>
@@ -57,7 +71,7 @@ export default function Home(props) {
           <Catalogue allDir={allDir}/>
         </div>
       </html>
-      
+      <div>you are the {visit.visitor}th visitor</div>
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
