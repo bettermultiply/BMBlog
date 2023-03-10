@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { getSortedPostsData, getPostDir } from '../lib/posts';
-import { Direc } from '../components/directory';
 import Catalogue from '../components/catalogue';
 import clientPromise from "../lib/mongodb"
 
@@ -67,7 +66,7 @@ export default function Home(props) {
           <code className={styles.code}>bettermultiply@gmail.com</code>
         </p>
         <div className={styles.Catalogue}>
-          <Direc allPostsData={allPostsData}/>
+
           <Catalogue allDir={allDir}/>
         </div>
       </html>

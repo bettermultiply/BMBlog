@@ -1,7 +1,6 @@
 import Head from "next/dist/shared/lib/head";
 import { getAllPostDir, getDirPostData, getPostDir } from "../../lib/posts";
 import Border from "../../components/border";
-import { PidDirec } from "../../components/directory";
 import Catalogue from "../../components/catalogue";
 import styles from "../../styles/PostsDirectory.module.css"
 
@@ -39,7 +38,6 @@ export default function Post(props) {
         <body>
             <Border />
             <div className={styles.Catalogue} >
-                <PidDirec allPostsData={allPostsData} />
                 <Catalogue allDir={allDir}/>
             </div>
         </body>
